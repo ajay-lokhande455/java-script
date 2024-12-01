@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script src="script.js"></script>
+    <h1>This is my first java script</h1>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker's Course Management</title>
+    <style>
+        :root {
+            --bg-color: #0a0e14;
+            --text-color: #00ff00;
+            --accent-color: #00ff00;
+            --secondary-color: #003300;
+            --highlight-color: #00aa00;
+        }
+        
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1, h2 {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px var(--accent-color);
+        }
+        
+        .app-sections {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        section {
+            background-color: rgba(0, 51, 0, 0.3);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px var(--accent-color);
+            flex: 1 1 300px;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input[type="text"], input[type="number"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: var(--bg-color);
+            border: 1px solid var(--accent-color);
+            color: var(--text-color);
+            border-radius: 4px;
+        }
+        
+        button {
+            background-color: var(--secondary-color);
+            color: var(--accent-color);
+            padding: 10px 15px;
+            border: 1px solid var(--accent-color);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        button:hover {
+            background-color: var(--highlight-color);
+            box-shadow: 0 0 10px var(--accent-color);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid var(--accent-color);
+        }
+        
+        th {
+            background-color: var(--secondary-color);
+            color: var(--accent-color);
+        }
+        
+        tr:hover {
+            background-color: rgba(0, 255, 0, 0.1);
+        }
+        
+        #searchResult {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: rgba(0, 51, 0, 0.3);
+            border-radius: 4px;
+            border: 1px solid var(--accent-color);
+        }
+
+        @keyframes glitch {
+            0% {
+                text-shadow: 0.05em 0 0 #00fffc, -0.05em -0.025em 0 #fc00ff,
+                    0.025em 0.05em 0 #fffc00;
+            }
+            14% {
+                text-shadow: 0.05em 0 0 #00fffc, -0.05em -0.025em 0 #fc00ff,
+                    0.025em 0.05em 0 #fffc00;
+            }
+            15% {
+                text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.025em 0 #fc00ff,
+                    -0.05em -0.05em 0 #fffc00;
+            }
+            49% {
+                text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.025em 0 #fc00ff,
+                    -0.05em -0.05em 0 #fffc00;
+            }
+            50% {
+                text-shadow: 0.025em 0.05em 0 #00fffc, 0.05em 0 0 #fc00ff,
+                    0 -0.05em 0 #fffc00;
+            }
+            99% {
+                text-shadow: 0.025em 0.05em 0 #00fffc, 0.05em 0 0 #fc00ff,
+                    0 -0.05em 0 #fffc00;
+            }
+            100% {
+                text-shadow: -0.025em 0 0 #00fffc, -0.025em -0.025em 0 #fc00ff,
+                    -0.025em -0.05em 0 #fffc00;
+            }
+        }
+
+        h1 {
+            animation: glitch 1s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hacker's Course Management</h1>
+        
+        <div class="app-sections">
+            <!-- Insert Course -->
+            <section>
+                <h2>Insert Course</h2>
+                <form id="insertForm">
+                    <label for="insertCourseName">Course Name</label>
+                    <input type="text" id="insertCourseName" name="courseName" placeholder="Enter course name" required>
+                    <label for="insertCourseDescription">Course Description</label>
+                    <input type="text" id="insertCourseDescription" name="courseDescription" placeholder="Enter course description" required>
+                    <label for="insertCourseDuration">Course Duration (in months)</label>
+                    <input type="number" id="insertCourseDuration" name="courseDuration" placeholder="Enter course duration" required>
+                    <label for="insertCourseFee">Course Fees</label>
+                    <input type="number" id="insertCourseFee" name="courseFee" placeholder="Enter course fees" required>
+                    <button type="submit">Insert Course</button>
+                </form>
+            </section>
+
+            <!-- Delete Course -->
+            <section>
+                <h2>Delete Course</h2>
+                <form id="deleteForm">
+                    <label for="deleteCourseId">Course ID</label>
+                    <input type="text" id="deleteCourseId" name="courseId" placeholder="Enter course ID" required>
+                    <button type="submit">Delete Course</button>
+                </form>
+            </section>
+
+            <!-- Update Course -->
+            <section>
+                <h2>Update Course</h2>
+                <form id="updateForm">
+                    <label for="updateCourseId">Course ID</label>
+                    <input type="text" id="updateCourseId" name="courseId" placeholder="Enter course ID" required>
+                    <label for="updateCourseName">New Course Name</label>
+                    <input type="text" id="updateCourseName" name="courseName" placeholder="Enter new course name">
+                    <label for="updateCourseDescription">New Course Description</label>
+                    <input type="text" id="updateCourseDescription" name="courseDescription" placeholder="Enter new course description">
+                    <label for="updateCourseDuration">New Course Duration (in months)</label>
+                    <input type="number" id="updateCourseDuration" name="courseDuration" placeholder="Enter new course duration">
+                    <button type="submit">Update Course</button>
+                </form>
+            </section>
+
+            <!-- Search Course by ID -->
+            <section>
+                <h2>Search Course</h2>
+                <form id="searchForm">
+                    <label for="searchCourseId">Course ID</label>
+                    <input type="text" id="searchCourseId" name="courseId" placeholder="Enter course ID" required>
+                    <button type="submit">Search Course</button>
+                </form>
+                <div id="searchResult"></div>
+            </section>
+        </div>
+
+        <!-- Show All Courses -->
+        <section>
+            <h2>All Courses</h2>
+            <button id="showAllCourses">Show All Courses</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Duration (Months)</th>
+                        <th>Fees</th>
+                    </tr>
+                </thead>
+                <tbody id="coursesTableBody">
+                    <!-- Courses will be dynamically added here -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <script>
+        // Course class to represent a course object
+        class Course {
+            constructor(id, name, description, duration, fee) {
+                this.id = id;
+                this.name = name;
+                this.description = description;
+                this.duration = duration;
+                this.fee = fee;
+            }
+        }
+
+        // CourseManager class to handle CRUD operations
+        class CourseManager {
+            constructor() {
+                this.courses = JSON.parse(localStorage.getItem('courses')) || [];
+            }
+
+            saveCourses() {
+                localStorage.setItem('courses', JSON.stringify(this.courses));
+            }
+
+            addCourse(course) {
+                this.courses.push(course);
+                this.saveCourses();
+            }
+
+            deleteCourse(id) {
+                this.courses = this.courses.filter(course => course.id !== id);
+                this.saveCourses();
+            }
+
+            updateCourse(id, updatedCourse) {
+                const index = this.courses.findIndex(course => course.id === id);
+                if (index !== -1) {
+                    this.courses[index] = { ...this.courses[index], ...updatedCourse };
+                    this.saveCourses();
+                }
+            }
+
+            getCourse(id) {
+                return this.courses.find(course => course.id === id);
+            }
+
+            getAllCourses() {
+                return this.courses;
+            }
+        }
+
+        const courseManager = new CourseManager();
+
+        // Helper function to generate unique IDs
+        function generateId() {
+            return '_' + Math.random().toString(36).substr(2, 9);
+        }
+
+        // Function to display a message
+        function showMessage(message, isError = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.textContent = message;
+            messageDiv.style.padding = '10px';
+            messageDiv.style.marginTop = '10px';
+            messageDiv.style.borderRadius = '4px';
+            messageDiv.style.backgroundColor = isError ? '#330000' : '#003300';
+            messageDiv.style.color = '#00ff00';
+            messageDiv.style.border = '1px solid #00ff00';
+            messageDiv.style.boxShadow = '0 0 10px #00ff00';

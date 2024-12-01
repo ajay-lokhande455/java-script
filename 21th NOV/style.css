@@ -1,0 +1,12 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(32, 10px);
+    grid-template-rows: repeat(32, 10px);
+    border: 1px solid black;
+    width: max-content;
+}
+
+.child{
+    border: 1px solid black;
+
+}

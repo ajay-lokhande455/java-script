@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box{
+    background-color: red;
+    height: 20vh;
+    width: 20vh;
+    border: 2px solid green;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+}
+.container{
+    background-color: antiquewhite;
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+}

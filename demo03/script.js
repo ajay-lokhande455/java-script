@@ -202,5 +202,5 @@ function countDigits(number) {
 
 // Example usage:
 const num = 12345;
-console.log(`The number of digits in ${num} is:`, countDigits(num));
+console.log(`The number of digits in ${num} is:`, countDigits(num)); 
 
